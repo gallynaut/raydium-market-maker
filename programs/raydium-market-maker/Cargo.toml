@@ -1,0 +1,28 @@
+[package]
+name = "raydium-market-maker"
+version = "1.0.0"
+edition = "2021"
+
+[features]
+no-entrypoint = []
+test-sbf = []
+
+[dependencies]
+solana-program = "1.18"
+spl-token = { version = "4.0.0", features = ["no-entrypoint"] }
+raydium_amm = { path = "../raydium_amm" }
+num-derive = "0.3"
+num-traits = "0.2.12"
+bytemuck = { version = "1.4.0" }
+safe-transmute = "0.11.0"
+thiserror = "1.0.20"
+
+[dev-dependencies]
+solana-program-test = "1.18.2"
+solana-sdk = "1.18.2"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
